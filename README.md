@@ -15,7 +15,9 @@ This table displays a list of projects along with their descriptions and links t
 </style>
 | Project Name | Description               | Website                        |
 | ------------ | ------------------------- | ------------------------------ |
+
 | Project 1    | Description of Project 1  | [Visit Project 1](#)           |
+
 | Project 2    | Description of Project 2  | [Visit Project 2](#)           |
 | Project 3    | Description of Project 3  | [Visit Project 3](#)           |
 | Project 4    | Description of Project 4  | [Visit Project 4](#)           |
