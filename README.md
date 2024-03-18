@@ -2,19 +2,9 @@
 
 ## Project Descriptions
 This table displays a list of projects along with their descriptions and links to their respective websites.
-<!-- This A Style With Css -->
-<style>
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-    th, td {
-        padding: 8px;
-        text-align: left;
-    }
-</style>
+
 | Project Name | Description               | Website                        |
-| ------------     | ------------------------- | ------------------------------ |
+| ------------ | ------------------------- | ------------------------------ |
 | Project 1    | Description of Project 1  | [Visit Project 1](#)           |
 | Project 2    | Description of Project 2  | [Visit Project 2](#)           |
 | Project 3    | Description of Project 3  | [Visit Project 3](#)           |
