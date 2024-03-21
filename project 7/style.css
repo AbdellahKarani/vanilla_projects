@@ -20,9 +20,66 @@ a {
 button {
     outline: 0;
     border: 0;
+    cursor: pointer;
+}
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+:root {
+    --eb-color: #ebf7ff;
+    --green-color: #25bb32;
+    --main-transition: 0.5s;
 }
 /* End A Global Rules */
 /* Start A Content Page */
+
+
+.page {
+    background-color: var(--eb-color);
+    height: 100vh;
+    width: 100%;
+    padding: 30px;
+}
+.page h1 {
+    margin-bottom: 50px;
+}
+.questions {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 80vh;
+}
+.questions .question {
+    margin-bottom: 30px;
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+    width: 600px;
+}
+.question .text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.question .text button {
+    padding: 3px;
+    color: var(--green-color);
+    font-size: 24px;
+    background-color: var(--eb-color);
+}
+.question .text button i.hidden {
+    display: none;
+}
+.question p.hidden {
+    display: none;
+    white-space: normal;
+    transition: var(--main-transition);
+}
 /* End A Content Page */
 
 
