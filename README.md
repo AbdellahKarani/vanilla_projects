@@ -1,4 +1,4 @@
-# 20 vanilla_projects [🌐 Visit To See All Projects At [Google](https://www.google.com)]
+# 20 vanilla_projects [🌐 Visit To See All Projects At [vanilla_projects](https://www.google.com)]
 
 ## Project Descriptions
 
