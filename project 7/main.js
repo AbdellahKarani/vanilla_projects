@@ -1,6 +1,6 @@
 var plus_moin = document.querySelectorAll(".plus");
 var content = document.querySelector(".hidden");
-
+var i = 0;
 [...plus_moin].forEach(element => {
     element.addEventListener("click", function() {
         if (element.classList.contains("fa-minus")) {
@@ -8,9 +8,12 @@ var content = document.querySelector(".hidden");
         } else {
             element.className = "fa-sharp fa-solid fa-minus";
         }
-        content.classList.toggle("hidden");
+        element.parentElement.parentElement.nextElementSibling.classList.toggle("hidden");
     });
 });
+
+
+
 
 
 

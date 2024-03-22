@@ -40,8 +40,10 @@ button {
 
 .page {
     background-color: var(--eb-color);
-    height: 100vh;
+    height: 100%;
     width: 100%;
+}
+.page .content_page {
     padding: 30px;
 }
 .page h1 {
@@ -72,8 +74,16 @@ button {
     font-size: 24px;
     background-color: var(--eb-color);
 }
+.question .text h3 {
+    font-size: 20px;
+}
 .question .text button i.hidden {
     display: none;
+}
+.question p {
+    border-top: 1px solid #e6e6e6;
+    padding-top: 10px;
+    font-weight: 600;
 }
 .question p.hidden {
     display: none;
@@ -81,6 +91,11 @@ button {
     transition: var(--main-transition);
 }
 /* End A Content Page */
-
-
-
+/* Start Footer */
+footer {
+    background-color: white;
+    padding: 20px 0;
+    font-weight: 600;
+    color: var(--green-color);
+}
+/* End Footer */
