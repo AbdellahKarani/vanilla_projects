@@ -1,6 +1,5 @@
 var plus_moin = document.querySelectorAll(".plus");
 var content = document.querySelector(".hidden");
-var i = 0;
 [...plus_moin].forEach(element => {
     element.addEventListener("click", function() {
         if (element.classList.contains("fa-minus")) {
