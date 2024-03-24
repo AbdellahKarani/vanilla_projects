@@ -1,8 +1,10 @@
 /* 
     For parent 
         display: grid; || inline-grid
-        grid-template-columns --> Number Of Columns + Size [Px,, %, auto, mix]
+        grid-template-columns --> Number Of Columns + Size [Px,, %, auto, mix, 1fr]
             repeat(columns_nbr, size) --> repeat(3, auto)
+            Fraction is grady --> Take All Space
+            Auto is shy --> Take Just Space for Content
 */
 * {
     box-sizing: border-box;
@@ -12,8 +14,7 @@
     background-color: #eee;
     margin: 0 20px;
     display: grid;
-    /* grid-template-columns: auto auto auto; */
-    grid-template-columns: 100px repeat(5, 100px) 200px;
+    grid-template-columns: repeat(1, auto) repeat(2, 1fr);
 }
 .parent div {
     background-color: red;
