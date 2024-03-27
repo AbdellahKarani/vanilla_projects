@@ -123,6 +123,6 @@ footer {
     padding: 20px 0;
     font-weight: 600;
     color: var(--green-color);
-    box-shadow: 0px 0px 6px 0px #afafaf;
+    box-shadow: 0 5px 6px 3px #0000001a;
 }
 /* End Footer */
