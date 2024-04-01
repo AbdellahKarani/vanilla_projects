@@ -20,8 +20,7 @@ body {
 :root {
     --main-color: #102a42;
     --page-color: #c5e5fc4f;
-    --main-button: #c59d5f;
-    --main-hover: #c88a2d;
+    --main-button: #c88a2d;
     --border-radius: 5px;
     --main-transition: 0.4s;
 }
@@ -39,7 +38,7 @@ body {
     background-color: var(--page-color);
     width: 100%;
     padding: 30px;
-    height: 250vh;
+    min-height: 100vh;
 }
 .page h1 {
     color: var(--main-color);
@@ -49,17 +48,16 @@ body {
 }
 .page ul li {
     display: inline-block;
-    background-color: var(--main-button);
-    color: white;
-    padding: 10px;
+    padding: 5px;
     margin-right: 10px;
     border-radius: var(--border-radius);
     cursor: pointer;
-    transition: var(--);
-    -webkit-transition: var(--main-transition);
+    transition: var(--main-transition);
+    margin-bottom: 20px;
+    border: 2px solid var(--main-button);
 }
 .page ul li:hover {
-    background-color: var(--main-hover);
+    background-color: var(--main-button);
 }
 .page .foods {
     display: grid;
@@ -67,18 +65,30 @@ body {
     gap: 30px;
 }
 .page .foods .box {
-    display: flex;
+    display: none;
     justify-content: space-between;
-    border: 2px solid black;
-    padding: 10px;
-    border-radius: var(--border-radius);
+}
+@media (min-width: 768px) {
+    .page .foods .box.show {
+        display: flex;
+    }
+}
+@media (max-width: 767px) {
+    .page .foods .box.show {
+        display: block;
+    }
 }
 .page .foods .box .image {
     margin-right: 30px;    
 }
 .page .foods .box img {
     width: 250px;
+    border: 4px solid var(--main-button);
     border-radius: var(--border-radius);
+    -webkit-border-radius: var(--border-radius);
+    -moz-border-radius: var(--border-radius);
+    -ms-border-radius: var(--border-radius);
+    -o-border-radius: var(--border-radius);
 }
 .foods .box .desc {
     width: 100%;
@@ -90,6 +100,12 @@ body {
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: var(--main-color) 2px dotted;
+    
+}
+.foods .box .desc .name_price p {
+    text-align: left;
+    color: var(--main-button);
+    font-weight: 600;
 }
 .foods .box .desc p {
     text-align: left;
@@ -97,10 +113,6 @@ body {
 @media (max-width: 767px) {
     .page .foods {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    }
-    .page .foods .box {
-        display: block;
-        text-align: center;
     }
     .page .foods .box img {
         width: 100%;
