@@ -3,3 +3,5 @@ in some country you se the image
 -- Notes Projects --< With A Good Idea Ann
 Colors...
 - Clock Time in year .... Millin scond
+- project with of translate any pdf to 
+anther langauge [english --> arabic]
