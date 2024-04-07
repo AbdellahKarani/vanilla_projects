@@ -1,15 +1,17 @@
 var play_pause = document.querySelector(".play-pause");
-var pause = document.querySelector(".pause");
-var play = document.querySelector(".play");
-var myVideo = document.querySelector(".travel") 
+var myVideo = document.querySelector(".travel");
+var preloader= document.querySelector(".preloader");
 
-pause.addEventListener("click", function() {
-    play_pause.classList.add("play");
-    myVideo.autoplay = false;
+window.addEventListener("load", function() {
+    setTimeout(function() {
+        preloader.classList.add("hide-preloader");
+    }, 1000);
 });
-play.addEventListener("click", function() {
-    play_pause.classList.remove("play");
-    myVideo.autoplay = true;
+
+play_pause.addEventListener("click", function() {
+    if (play_pause.classList.contains("play")) myVideo.pause()
+    else myVideo.play();
+    play_pause.classList.toggle("play");
 });
 
 
