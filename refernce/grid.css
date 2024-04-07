@@ -1,26 +1,50 @@
 /* 
     For parent 
         display: grid; || inline-grid
-        grid-template-columns --> Number Of Columns + Size [Px,, %, auto, mix, 1fr]
+        grid-template-columns --> Number Of Columns With In + [Px,, %, auto, mix, 1fr]
             repeat(columns_nbr, size) --> repeat(3, auto)
             Fraction is grady --> Take All Space
             Auto is shy --> Take Just Space for Content
+        grid-template-rows --> Number Of Rows Height In + [Px, %, auto, mix, 1fr]
+            repeat(rows_number, size)
+        gap : [Row Gap] [Column Gap]
+
+        [Do Not Use Fraction It take all width or height]
+        justify-content: this for Horizontal
+            flex-end, flex-start, center, space-between, space-around, space-evenly
+        
+        align-content: this for Vertical
+            flex-end, flex-start, center, space-between, space-around, space-evenly
 */
 * {
     box-sizing: border-box;
 }
 
 .parent {
+    padding: 10px;
     background-color: #eee;
-    margin: 0 20px;
     display: grid;
-    grid-template-columns: repeat(1, auto) repeat(2, 1fr);
+    height: 500px;
+    width: 600px;
+    margin: 2px auto;
+    /* grid-template-columns: 1fr 1fr 100px; */
+    /* grid-template-rows: 300px repeat(2, auto); */
+    /* grid-template-rows: auto auto 1fr; */
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    gap: 10px;
+    /* grid-template-rows: 200px repeat(3, auto); */
+    /* row-gap: 30px; */
+    /* column-gap: 20px; */
+
+    justify-content: center;
+    align-content: center;
 }
+
 .parent div {
     background-color: red;
     padding: 20px;
     color: white;
     text-align: center;
     font-weight: bold;
-    margin: 15px;
 }
