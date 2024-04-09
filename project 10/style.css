@@ -24,11 +24,14 @@ button {
     --main-color: #40cfd4;
     --main-transition: .3s;
     --blue-color: #102a42;
-    --page-color: #f5f5f5;
+    --page-color: #f7f7f7;
 }
 .page {
     height: calc(100vh - 60px);
-    padding: 30px;
+    padding: 10px;
+}
+html {
+    scroll-behavior: smooth;
 }
 .container {
     margin: 0 80px;
@@ -44,11 +47,10 @@ button {
     width: 250px;
     margin: 0 auto;
     padding: 5px 20px;
-    border: 2px solid var(--main-color);
     font-size: 35px;
     text-align: center;
     font-weight: bold;
-    color: black;
+    color: var(--blue-color);
     z-index: 10;
 }
 .main-title::after, .main-title::before {
@@ -80,6 +82,11 @@ button {
 .main-title:hover::after {
     left: 0;
 }
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* End Global Roles */
 /* Start Content */
 
@@ -106,7 +113,7 @@ button {
     object-fit: cover; /* Important */
 }
 header {
-    background-color: #ffc2c2;
+    background-color: transparent;
     padding: 20px;
     position: fixed;
     width: 100%;
@@ -116,12 +123,17 @@ header {
     align-items: center;
     z-index: 50;
 }
+header.scroll {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 header .logo {
+    color: white;
     font-size: 20px;
     font-weight: 600;
     letter-spacing: 3px;
-    color: black;
 }
+header .logo.scroll { color: var(--blue-color); }
 header ul.links {
     display: flex;
     justify-content: space-between;
@@ -131,10 +143,11 @@ header ul.links li {
     margin-left: 18px;
 }
 header ul.links li a {
-    color: rgb(0, 0, 0);
+    color: white;
     font-size: 20px;
     font-weight: bold;
 }
+header ul li a.scroll { color: var(--blue-color); }
 .page-content {
     display: grid;
     justify-content: center;
@@ -171,16 +184,35 @@ header ul.links li a {
     background-color: var(--page-color);
 }
 .about-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100%;
 }
-
-
-
-
-
+/* End About Page */
+/* Start Services */
+.services {
+    background-color: white;
+}
+.services-content {
+    height: 100%;
+}
+/* End Services */
+/* Start Tours */
+.tours {
+    background-color: var(--page-color);
+}
+.tours-content {
+    height: 100%;
+}
+/* End Tours */
+/* Start Footer */
+footer {
+    background-color: var(--blue-color);
+    padding: 18px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+/* End Footer */
 
 
 

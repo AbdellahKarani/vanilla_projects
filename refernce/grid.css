@@ -48,3 +48,18 @@
     text-align: center;
     font-weight: bold;
 }
+/* Start A Layout */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+/* End A Layout */
+
+
+
