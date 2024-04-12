@@ -29,7 +29,17 @@ document.addEventListener("DOMContentLoaded", function() {
     scrollTo(0, -window.screen.height * 3);
 });
 
-
-
-
+// Start Bars Section In Header 
+var bar = document.querySelector("header .bars");
+var ul_links = document.querySelector("header ul.links");
+bar.addEventListener("click", function() {
+    ul_links.classList.toggle("down");
+    if (ul_links.classList.contains("down")) {
+        bar.className = "fa-solid fa-xmark bars";
+        bar.style.color = "red";
+    } else {
+        bar.className = "fa-solid fa-bars bars";
+        bar.style.color ="#102a42";
+    }
+});
 

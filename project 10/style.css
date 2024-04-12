@@ -148,6 +148,44 @@ header ul.links li a {
     font-weight: bold;
 }
 header ul li a.scroll { color: var(--blue-color); }
+header .bars {
+    display: none;
+    cursor: pointer;
+    font-size: 25px;
+}
+@media (max-width: 767px) {
+    header {
+        background-color: white;
+    }
+    header .logo {
+        color: var(--blue-color);
+    }
+    header .bars {
+        display: block;
+        color: var(--blue-color);
+    }
+    header ul.links {
+        background-color: white;
+        width: 100%;
+        height: 0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        transition: var(--main-transition);
+        visibility: hidden;
+        overflow: hidden;
+        display: block;
+}
+    header ul.links.down {
+        visibility: visible;
+        height: 190px;
+        padding: 20px 0px;
+    }
+    header ul.links li a {
+        margin-bottom: 15px;
+        color: var(--blue-color);
+    }
+}
 .page-content {
     display: grid;
     justify-content: center;
