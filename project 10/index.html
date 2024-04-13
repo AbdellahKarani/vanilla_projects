@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Scroll</title>
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,18 +17,21 @@
 </head>
 <body>
     <div class="content">
+        <button class="up">Up</button>
         <div class="main-page" id="home">
             <img src="/image3.jpg" alt="No Image">
             <header>
                 <div class="logo">
                     Abdellah
                 </div>
-                <ul class="links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#tours">Tours</a></li>
-                </ul>
+                <div class="links-container">
+                    <ul class="links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#tours">Tours</a></li>
+                    </ul>
+                </div>
                 <i class="fa-solid fa-bars bars"></i>
             </header>
             <div class="page-content container page">
@@ -56,7 +59,7 @@
             </div>
         </div>
         <footer>
-            All Right Reserved 2024
+            All Right Reserved Copyright &copy; <span class="data"></span>
         </footer>
     </div>
     <script src="main.js"></script>

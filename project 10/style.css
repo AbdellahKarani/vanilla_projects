@@ -33,12 +33,9 @@ button {
 html {
     scroll-behavior: smooth;
 }
-.container {
-    margin: 0 80px;
-}
-@media (max-width: 767px) {
+@media (min-width: 767px) {
     .container {
-        margin: 0 30px;
+        margin: 0 80px;
     }
 }
 .main-title {
@@ -120,10 +117,9 @@ header {
     height: 60px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     z-index: 50;
 }
-header.scroll {
+header.setHeaderColor {
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -133,7 +129,7 @@ header .logo {
     font-weight: 600;
     letter-spacing: 3px;
 }
-header .logo.scroll { color: var(--blue-color); }
+header .logo.setColorLogo { color: var(--blue-color); }
 header ul.links {
     display: flex;
     justify-content: space-between;
@@ -147,7 +143,9 @@ header ul.links li a {
     font-size: 20px;
     font-weight: bold;
 }
-header ul li a.scroll { color: var(--blue-color); }
+header ul.links.set-color li a {
+    color: var(--blue-color);
+}
 header .bars {
     display: none;
     cursor: pointer;
@@ -165,6 +163,11 @@ header .bars {
         color: var(--blue-color);
     }
     header ul.links {
+        display: block;
+        padding: 10px 0;
+    }
+    header ul.links li a {color: var(--blue-color);}
+    header .links-container {
         background-color: white;
         width: 100%;
         height: 0;
@@ -172,16 +175,15 @@ header .bars {
         top: 60px;
         left: 0;
         transition: var(--main-transition);
-        visibility: hidden;
+        /* visibility: hidden; */
         overflow: hidden;
         display: block;
-}
-    header ul.links.down {
-        visibility: visible;
-        height: 190px;
-        padding: 20px 0px;
     }
-    header ul.links li a {
+    /* header .links-container.show_links {
+        visibility: visible;
+        /* height: 190px; 
+    } */
+    header .links-container li a {
         margin-bottom: 15px;
         color: var(--blue-color);
     }
@@ -248,8 +250,48 @@ footer {
     text-align: center;
     color: white;
     font-weight: bold;
-    letter-spacing: 10px;
+    letter-spacing: 5px;
 }
+.up {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: var(--main-color);
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    animation-name: up;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    transition: var(--main-transition);
+}
+.up.show {
+    display: block;
+}
+@keyframes up {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.05);
+}
+    50% {
+        transform: scale(1.1);
+    }
+    75% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+
 /* End Footer */
 
 
