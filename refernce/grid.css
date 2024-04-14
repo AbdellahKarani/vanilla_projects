@@ -10,7 +10,8 @@
     grid-template-columns: repeat(10, auto);
     grid-template-areas: "logo logo links links links links links links links links"
     "cont cont cont cont cont cont aside aside aside aside"
-    "foot foot foot foot foot foot foot foot foot foot";
+    "foot foot foot foot foot foot foot foot foot foot"; /* Number Of Column --> 
+    You Do Not To Write grid-template-column if you want */
     grid-template-rows: 50px auto 50px;
 }
 @media (max-width: 767px) {
@@ -67,8 +68,19 @@ footer {
         align-content: this for Vertical
             flex-end, flex-start, center, space-between, space-around, space-evenly
 
+        grid-template-areas: "head head head head"; --> Make Four Column
+            This Equal To grid-template-columns: repeat(4, auto);
+        --> For Child We Can Use
+        .parent div:nth-child(1) {grid-area: head;} --> Will Take 4 Column
+---------------------------------------
     For Child
         grid-column: start / end; --> Not Including The End
+        grid-row: start / end; --> Not Including The End
+        ------------
+        grid-row: span n; --> n number pf row
+        grid-column: k / span n; --> k is start && n number pf column
+
+        grid-area: [grid row start] [gird column start] [grid row end] [gird column end]
 */
 .parent-page {
     height: 100vh;
@@ -76,7 +88,7 @@ footer {
     justify-content: center;
     align-content: center;
 }
-.parent {
+.parent1 {
     padding: 10px;
     background-color: #eee;
     display: grid;
@@ -102,18 +114,50 @@ footer {
     text-align: center;
     font-weight: bold;
 }
-.parent div:first-child {
+.parent1 div:first-child {
     grid-column: 1 / 3; /* Take Two Column */
     grid-column: span 4; /* Start With 1 and Take 4 Column */
     grid-column: 2 / span 3; /* Start With 2 And Take 3 Column */
-    grid-column: span 1;
     grid-row: 1 / 3; /* Start From 1 And Take 2 */
+    grid-column: span 1;
+    grid-row: span 1;
+}
+.parent1 div:nth-child(3) {
+    grid-column: span 4; /* Will Be Down And Take 4 Column */
+    grid-row: 3 / span 3; /* Start From 3 And Take 3 */
+    grid-column: span 1;
+    grid-row: span 1;
+}
+.parent1 div:nth-child(9) {
+    background-color: green;
+    grid-area: 2 / 2 / 4 / 6;
+}
+
+/* Start Grid Area */
+.parent {
+    padding: 10px;
+    margin: 2px auto;
+    background-color: #eee;
+    display: grid;
+    gap: 10px;
+    /* grid-template-areas: "head head head head"; Like repeat(4, auto) */
+    grid-template-areas: "head head nav nav nav" /* 5 Column First Row*/
+        "cont cont cont cont cont" /* 5 Column Second Row */;
+}
+.parent div:nth-child(1) {
+    grid-area: head;
+}
+.parent div:nth-child(2) {
+    grid-area: nav;
 }
 .parent div:nth-child(3) {
-    grid-column: span 4; /* Will Be Down And Take 4 Column */
-    grid-column: span 1;
-    grid-row: 3 / span 3; /* Start From 3 And Take 3 */
+    grid-area: cont;
 }
-/* Go To The Task Of Elzero About Grid */
+
+
+
+
+
+
 
 
