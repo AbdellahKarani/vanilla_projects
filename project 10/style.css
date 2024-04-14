@@ -30,9 +30,9 @@ button {
     height: calc(100vh - 60px);
     padding: 10px;
 }
-html {
+/* html {
     scroll-behavior: smooth;
-}
+} */
 @media (min-width: 767px) {
     .container {
         margin: 0 80px;

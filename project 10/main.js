@@ -38,8 +38,6 @@ var links = document.querySelector("header .links-container");
 bar.addEventListener("click", function() {
     const container_height = ul_links.getBoundingClientRect().height;
     const linksHeight = links.getBoundingClientRect().height;
-    console.log(container_height);
-    console.log(linksHeight);
     if (linksHeight == 0) {
         links.style.height = `${container_height}px`;
         links.visibility = "visible";
@@ -57,6 +55,32 @@ bar.addEventListener("click", function() {
     // links.classList.toggle("show_links");
 });
 
+
+// ************* Fix Missing Section *************
+// Select Links
+var scroll_links = document.querySelectorAll(".scroll-links");
+console.log(scroll_links);
+scroll_links.forEach(link => {
+    link.addEventListener("click", function(event) {
+        // Default Event
+        event.preventDefault();
+        // Navigate To The Specific Spot
+        const id = event.currentTarget.getAttribute("href").slice(1);
+        const element = document.getElementById(id);
+        const position= element.offsetTop;
+        const sectionTitleHeight = document.querySelector(`#${id} h1`).getBoundingClientRect()
+        .height;
+        window.scrollTo({
+            top: position - sectionTitleHeight, left: 0, behavior: "smooth",
+        });
+        // Hide The Nav Bar
+        links.style.height = "0px";
+        bar.className = "fa-solid fa-bars bars";
+        bar.style.color ="#102a42";
+    });
+});
+
+
 // ************* Explore Scroll *************
 var explore = document.querySelector("#explore");
 explore.addEventListener("click", function(event) {
@@ -68,4 +92,3 @@ explore.addEventListener("click", function(event) {
 document.addEventListener("DOMContentLoaded", function() {
     scrollTo(0, -window.screen.height * 3);
 });
-
