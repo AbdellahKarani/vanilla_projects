@@ -27,7 +27,9 @@ window.onscroll = function() {
     }
 }
 up.addEventListener("click", function() {
-    scrollTo(0, -window.screen.height);
+    scrollTo({
+        top: -window.screen.height, left: 0, behavior: "smooth",
+    });
 });
 
 
@@ -74,7 +76,7 @@ scroll_links.forEach(link => {
             top: position - sectionTitleHeight, left: 0, behavior: "smooth",
         });
         // Hide The Nav Bar
-        links.style.height = "0px";
+        links.style.height = 0;
         bar.className = "fa-solid fa-bars bars";
         bar.style.color ="#102a42";
     });
@@ -85,10 +87,14 @@ scroll_links.forEach(link => {
 var explore = document.querySelector("#explore");
 explore.addEventListener("click", function(event) {
     event.preventDefault();
-    scrollBy(0, window.screen.height * 3);
+    scrollBy({
+        top: window.screen.height * 3, left: 0, behavior: "smooth",
+    });
 });
 
 // ************* Loading The Page *************
 document.addEventListener("DOMContentLoaded", function() {
-    scrollTo(0, -window.screen.height * 3);
+    scrollTo({
+        top: -window.screen.height * 3, left: 0, behavior: "smooth",
+    });
 });
