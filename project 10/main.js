@@ -1,3 +1,11 @@
+// Check If The Scroll Exit Or Not
+if (window.localStorage.getItem("scroll")) {
+    window.scrollBy({
+        left: 0, top: window.localStorage.getItem("scroll"), behavior: "smooth",
+    })
+}
+
+
 // ************* Set The Date *************
 var date = document.querySelector(".data");
 date.innerHTML = new Date().getFullYear();
@@ -25,6 +33,7 @@ window.onscroll = function() {
     else {
         up.classList.remove("show");
     }
+    window.localStorage.setItem("scroll", window.scrollY);
 }
 up.addEventListener("click", function() {
     scrollTo({
@@ -92,9 +101,9 @@ explore.addEventListener("click", function(event) {
     });
 });
 
-// ************* Loading The Page *************
-document.addEventListener("DOMContentLoaded", function() {
-    scrollTo({
-        top: -window.screen.height * 3, left: 0, behavior: "smooth",
-    });
-});
+// // ************* Loading The Page *************
+// document.addEventListener("DOMContentLoaded", function() {
+//     scrollTo({
+//         top: -window.screen.height * 3, left: 0, behavior: "smooth",
+//     });
+// });
