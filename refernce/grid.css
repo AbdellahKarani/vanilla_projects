@@ -4,6 +4,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+body {
+    padding: 50px;
+}
 .page-content {
     height: 100vh;
     display: grid;
