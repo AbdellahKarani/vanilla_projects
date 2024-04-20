@@ -22,15 +22,68 @@ button {
 }:root {
     --main-color: #f1f1f1;
     --main-border-radius: 5px;
-    --main-transition: 0.5s;
+    --main-transition: 0.3s;
 }
 /* End Of Global Roles */
 /* Start Content */
-
-
-
-
-
+.page {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(10, auto);
+    grid-template-areas: "header header header header header header header header header header"
+    "content content content content content content content content content content";
+    grid-template-rows: 60px auto;
+}
+header {
+    grid-area: header;
+    width: 100%;
+    position: relative;
+    background-color: #f1f1f1;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+header .logo {
+    font-size: 32px;
+    font-weight: 600;
+}
+.links-container {
+    height: auto;
+}
+header ul.links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header ul.links li {
+    margin-left: 10px;
+    font-size: 23px;
+}
+header .navIcon {
+    font-size: 23px;
+    display: none;
+    cursor: pointer;
+} 
+@media (max-width: 767px) {
+    .links-container {
+        position: absolute;
+        left: 0;
+        top: 60px;
+        background-color: #cccccc;
+        width: 100%;
+        height: 0;
+        transition: var(--main-transition);
+    }
+    header .navIcon {display: block;}
+    header ul.links {display: none;}
+    header ul.links.down {display: block; padding: 15px 10px;}
+    header ul.links.down li {margin-bottom: 15px;}
+}
+img {
+    width: 100px;
+}
 
 
 
