@@ -32,3 +32,16 @@ navIcon.addEventListener("click", function() {
     // Change The Icon
 });
 
+// Start Count Down
+const day = document.querySelector(".day");
+const hour = document.querySelector(".hour");
+const min = document.querySelector(".min");
+const sec = document.querySelector(".sec");
+
+
+
+
+
+
+
+
