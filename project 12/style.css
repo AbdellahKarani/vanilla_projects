@@ -26,7 +26,7 @@ button {
     --main-transition: 0.3s;
 }
 /* End Of Global Roles */
-/* Start Content */
+/* Start Header */
 .page {
     height: 100%;
 }
@@ -77,9 +77,9 @@ header .navIcon {
     header .navIcon {display: block;}
     header ul.links {visibility: hidden;}
     header ul.links.down {visibility: visible; padding: 15px 10px;}
-    header ul.links.down li {margin-bottom: 15px;}
+    header ul.links.down li:not(:last-child) {margin-bottom: 15px;}
 }
-
+/* End header */
 /* Start Content */
 .content {
     height: calc(100vh - 60px);
@@ -119,24 +119,25 @@ header .navIcon {
 .main-time li {
     text-align: center;
     color: white;
-    font-size: 23px;
+    font-size: 16px;
     font-weight: 600;
     background-color: var(--main-c);
     width: 5rem;
     height: 5rem;
     display: grid;
     place-items: center;
+    font-weight: normal;
 }
 .main-time li:not(:last-child) {
     margin-right: 15px;
 }
-.main-time li span {display: block; font-weight: normal; font-size: 18px;}
+.main-time li span {display: block; font-weight: normal; font-size: 25px; font-weight: 600;}
 @media (max-width: 1112px) {
     .content {
         margin: 40px 20px;
         height: calc(100% - 60px);
         grid-template-columns: repeat(4, auto);
-        grid-template-areas: "image image image image" 
+        grid-template-areas: "image image image image"
         "iphone iphone iphone iphone";
         justify-content: center;
         align-content: center;
@@ -154,8 +155,14 @@ header .navIcon {
     .main-time li {width: 4.5rem;}
     .main-time span {font-size: 14px;}
 }
-
-
-
-
 /* End Content */
+/* Start Footer */
+footer {
+    background-color: var(--main-c);
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    color: white;
+}
+/* End Footer */
+/* All Right Reversed */

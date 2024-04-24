@@ -29,19 +29,30 @@ navIcon.addEventListener("click", function() {
         navIcon.className = "fas fa-bars navIcon";
         navIcon.style.color = "black";
     }
-    // Change The Icon
 });
 
 // Start Count Down
-const day = document.querySelector(".day");
-const hour = document.querySelector(".hour");
-const min = document.querySelector(".min");
-const sec = document.querySelector(".sec");
+const day = document.querySelector(".day span");
+const hour = document.querySelector(".hour span");
+const min = document.querySelector(".min span");
+const sec = document.querySelector(".sec span");
 
+setInterval(() => {
+    sec.textContent = Number(sec.textContent) + 1;
+    if (sec.textContent == 60) {
+        min.textContent = Number(min.textContent) + 1;
+        sec.textContent = 0;
+        if (min.textContent == 60) {
+            hour.textContent = Number(hour.textContent) + 1;
+            min.textContent = 0;
+            if (hour.textContent == 24) {
+                hour.textContent = 0;
+                day.textContent = Number(day.textContent) + 1;
+            }
+        }
+    }
+}, 1000);
 
-
-
-
-
-
-
+// Update Footer
+var footer_copyright = document.querySelector("footer .date");
+footer_copyright.textContent = new Date().getFullYear();
