@@ -53,6 +53,15 @@ setInterval(() => {
     }
 }, 1000);
 
+
+// The GiveWay Date
+var end_giv = document.querySelector(".end_giv");
+// end_giv.textContent = 
+console.log(new Date().getTime());
+console.log(new Date().getMonth());
+console.log(new Date().getDate());
+
+
 // Update Footer
 var footer_copyright = document.querySelector("footer .date");
 footer_copyright.textContent = new Date().getFullYear();
