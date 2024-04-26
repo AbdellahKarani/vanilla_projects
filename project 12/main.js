@@ -1,7 +1,7 @@
-var links_container = document.querySelector(".links-container");
-var links = document.querySelector(".links");
-var liLinks = document.querySelectorAll(".links li");
-var navIcon = document.querySelector(".navIcon");
+let links_container = document.querySelector(".links-container");
+let links = document.querySelector(".links");
+let liLinks = document.querySelectorAll(".links li");
+let navIcon = document.querySelector(".navIcon");
 
 // Hide The Nav bar If Click Tp Link
 liLinks.forEach(function(ele) {
@@ -31,37 +31,94 @@ navIcon.addEventListener("click", function() {
     }
 });
 
+
+// Set Date For Giveaway
+let months = ["January", "February", "March", "April", "May", "Jun",
+"Juliet", "August", "September", "October", "December"];
+let days = ["Monday", "Thursday", "Wednesday", "Tuesday",
+"Friday", "Sunday", "Saturday"];
+let end_giv = document.querySelector(".end_giv");
+// Format : Tuesday, 30 April 2024 11:30am
+let future_date = new Date(2026, 7, 17, 21, 29);
+const year = future_date.getFullYear();
+const hours = future_date.getHours();
+const minutes = future_date.getMinutes();
+const month_name = months[future_date.getMonth() - 1];
+const day_name = days[future_date.getDay()];
+
+end_giv.textContent = `${day_name}, ${future_date.getMonth()} \
+${month_name} ${year} ${hours}:${minutes}am`;
+
+
+
 // Start Count Down
-const day = document.querySelector(".day span");
-const hour = document.querySelector(".hour span");
-const min = document.querySelector(".min span");
-const sec = document.querySelector(".sec span");
+function getRemainingDay() {
+    const current_date_mil = new Date().getTime();
+    const future_date_mil = future_date.getTime();
+    const oneDay = 24 * 3600 * 1000;
+    const oneHour = 3600 * 100;
+    const oneMinute = 60 * 1000;
+    // Calculate All Values
+    const t = (future_date_mil - current_date_mil)
+    const days = Math.floor((t / oneDay));
+    const hours = Math.floor((t % oneDay) / oneHour);
+    const minutes = Math.floor(((t % oneDay) % oneHour) / oneMinute);
+    const seconds = Math.floor(((t % oneDay) % oneHour) / 1000);
+    console.log(days, hours, minutes, seconds);
+}
+getRemainingDay();
 
-setInterval(() => {
-    sec.textContent = Number(sec.textContent) + 1;
-    if (sec.textContent == 60) {
-        min.textContent = Number(min.textContent) + 1;
-        sec.textContent = 0;
-        if (min.textContent == 60) {
-            hour.textContent = Number(hour.textContent) + 1;
-            min.textContent = 0;
-            if (hour.textContent == 24) {
-                hour.textContent = 0;
-                day.textContent = Number(day.textContent) + 1;
-            }
-        }
-    }
-}, 1000);
+const day_ele = document.querySelector(".day span");
+const hour_ele = document.querySelector(".hour span");
+const min_ele = document.querySelector(".min span");
+const sec_ele = document.querySelector(".sec span");
 
-
-// The GiveWay Date
-var end_giv = document.querySelector(".end_giv");
-// end_giv.textContent = 
-console.log(new Date().getTime());
-console.log(new Date().getMonth());
-console.log(new Date().getDate());
+day_ele.textContent = future_date.getDay();
+hour_ele.textContent = future_date.getHours();
+min_ele.textContent = future_date.getMinutes();
+sec_ele.textContent = future_date.getSeconds();
 
 
-// Update Footer
-var footer_copyright = document.querySelector("footer .date");
+// setInterval(() => {
+//     sec.textContent = Number(sec.textContent) + 1;
+//     if (sec.textContent == 60) {
+//         min.textContent = Number(min.textContent) + 1;
+//         sec.textContent = 0;
+//         if (min.textContent == 60) {
+//             hour.textContent = Number(hour.textContent) + 1;
+//             min.textContent = 0;
+//             if (hour.textContent == 24) {
+//                 hour.textContent = 0;
+//                 day.textContent = Number(day.textContent) + 1;
+//             }
+//         }
+//     }
+// }, 1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Update Footer */
+let footer_copyright = document.querySelector("footer .date");
 footer_copyright.textContent = new Date().getFullYear();
+
+
+
+
+
