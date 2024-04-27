@@ -116,6 +116,10 @@ header .navIcon {
 .main-time {
     display: flex;
 }
+.main-time .expired {
+    font-size: 20px;
+    color: var(--main-c);
+}
 .main-time li {
     text-align: center;
     color: white;
